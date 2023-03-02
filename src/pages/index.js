@@ -3,6 +3,9 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import SearchIcon from "@mui/icons-material/Search";
+import IconButton from "@mui/material/IconButton";
 import SelectType from "../components/dropdown";
 import SliderSelect from "../components/slider";
 import Activity from "../components/activity";
@@ -54,37 +57,29 @@ export default function Home() {
 
   return (
     <Container maxWidth="md">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
-          Activity Finder
-        </Typography>
-        <Typography variant="subtitle1" component="p" gutterBottom>
-          Don't know what to do this weekend? Need some inspiration? Well
-          Activity Finder has you covered! Enter in some parameters to narrow
-          down some cool plans or be spontaneous and leave them blank for a fun
-          surprise.
-        </Typography>
-      </Box>
+      <Typography variant="h2" component="h1" gutterBottom>
+        Activity Finder
+      </Typography>
+      <Typography variant="subtitle1" component="p" gutterBottom>
+        Don't know what to do this weekend? Need some inspiration? Well Activity
+        Finder has you covered! Enter in some parameters to narrow down some
+        cool plans or be spontaneous and leave them blank for a fun surprise.
+      </Typography>
       <Box>
-        <SliderSelect
-          setAccessibility={setAccessibility}
-          name="Accessibility"
-        />
-        <SliderSelect setPrice={setPrice} name="Price Range" />
-        <SelectType setType={setType} opts={types} title="Type" />
-        <Text setParticipants={setParticipants} label={"Participants"} />
-        <Button onClick={handleSearch} variant="contained">
-          Search
-        </Button>
+        <Stack direction="row" spacing={2}>
+          <SliderSelect
+            setAccessibility={setAccessibility}
+            name="Accessibility"
+          />
+          <SliderSelect setPrice={setPrice} name="Price Range" />
+          <SelectType setType={setType} opts={types} title="Type" />
+          <Text setParticipants={setParticipants} label={"Participants"} />
+          <IconButton onClick={handleSearch} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+        </Stack>
       </Box>
-
-      <Activity
-        // price={price}
-        // accessibility={accessibility}
-        // type={type}
-        // participants={participants}
-        url={parameters}
-      />
+      <Activity url={parameters} />
     </Container>
   );
 }

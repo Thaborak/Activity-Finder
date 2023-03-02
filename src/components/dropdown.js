@@ -9,7 +9,6 @@ export default function Dropdown(props) {
 
   const handleChange = (event) => {
     setType(event.target.value);
-    //could have used context for this
     if (props.setType) props.setType(event.target.value);
   };
 

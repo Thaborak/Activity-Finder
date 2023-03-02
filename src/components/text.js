@@ -7,7 +7,6 @@ export default function Text(props) {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    //could have used context for this
     if (props.setParticipants) props.setParticipants(event.target.value);
   };
   return (

@@ -7,7 +7,6 @@ export default function SliderSelect(props) {
   const [value, setValue] = React.useState([0.0, 0.5]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    //could have used context for this
     if (props.setPrice) props.setPrice(newValue);
     if (props.setAccessibility) props.setAccessibility(newValue);
   };

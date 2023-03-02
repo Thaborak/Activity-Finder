@@ -27,10 +27,9 @@ export default function Activity(props) {
     <div>
       <Card>
         <CardContent>
-          <Typography variant="h2" gutterBottom>
-            Activity Title
+          <Typography variant="h5" gutterBottom>
+            {data.activity}
           </Typography>
-          <Typography>Activity: {data.activity}</Typography>
           <Typography>Accessibility: {data.accessibility}</Typography>
           <Typography>Type: {data.type}</Typography>
           <Typography>Participants: {data.participants}</Typography>
