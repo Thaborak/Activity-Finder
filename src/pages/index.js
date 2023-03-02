@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-useState;
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -35,7 +34,7 @@ export default function Home() {
   const [type, setType] = useState("");
   const [participants, setParticipants] = useState("");
 
-  // console.log([accessibility, price, type, participants]);
+  console.log([accessibility, price, type, participants]);
 
   return (
     <Container maxWidth="md">
