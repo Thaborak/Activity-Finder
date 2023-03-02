@@ -5,19 +5,19 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function Activity() {
+export default function Activity(props) {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
-
+  const { url } = props;
   useEffect(() => {
     setLoading(true);
-    fetch("https://www.boredapi.com/api/activity?participants=9")
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         setLoading(false);
       });
-  }, []);
+  }, [url]);
 
   if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No profile data</p>;
